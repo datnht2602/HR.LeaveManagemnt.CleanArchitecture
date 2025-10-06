@@ -11,8 +11,13 @@ public class LeaveTypeRepository : GenericRepository<LeaveType>, ILeaveTypeRepos
     {
     }
 
-    public Task<bool> IsLeaveTypeUnique(string name)
+    public async Task<bool> IsLeaveTypeUnique(string name)
     {
-        return _context.LeaveTypes.AnyAsync(q => q.Name == name);
+        return await _context.LeaveTypes.AnyAsync(q => q.Name == name) == false;
+    }
+
+    public async Task<bool> IsLeaveTypeExist(int id)
+    {
+        return await _context.LeaveTypes.AnyAsync(q => q.Id == id);
     }
 }

@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Persiste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Infrastructure", "src\Infrastructure\HR.LeaveManagement.Infrastructure\HR.LeaveManagement.Infrastructure.csproj", "{A8FE7191-8F64-4FCF-B92B-DADD2AEB5B52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Api", "src\HR.LeaveManagement.Api\HR.LeaveManagement.Api.csproj", "{28920245-3D96-47F7-96F5-2476D9510341}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,18 @@ Global
 		{A8FE7191-8F64-4FCF-B92B-DADD2AEB5B52}.Release|x64.Build.0 = Release|Any CPU
 		{A8FE7191-8F64-4FCF-B92B-DADD2AEB5B52}.Release|x86.ActiveCfg = Release|Any CPU
 		{A8FE7191-8F64-4FCF-B92B-DADD2AEB5B52}.Release|x86.Build.0 = Release|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Debug|x64.Build.0 = Debug|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Debug|x86.Build.0 = Debug|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Release|x64.ActiveCfg = Release|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Release|x64.Build.0 = Release|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Release|x86.ActiveCfg = Release|Any CPU
+		{28920245-3D96-47F7-96F5-2476D9510341}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,5 +105,6 @@ Global
 		{8C008D56-C294-4F03-9C00-EDC2B3CED3DB} = {70F2DC3B-26AD-4275-A019-38A2C6B6A0ED}
 		{6E84174A-73A7-4745-8119-91C1FFA67EF7} = {937C74AB-35E1-43C7-B0A3-BF7F5C4C7688}
 		{A8FE7191-8F64-4FCF-B92B-DADD2AEB5B52} = {937C74AB-35E1-43C7-B0A3-BF7F5C4C7688}
+		{28920245-3D96-47F7-96F5-2476D9510341} = {4DEB1C24-1308-406F-BFE9-8719B7D2273C}
 	EndGlobalSection
 EndGlobal
