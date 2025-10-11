@@ -12,6 +12,10 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="NSwag.MSBuild" Version="14.6.1">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.6" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.6" />
     </ItemGroup>
@@ -21,5 +25,13 @@
       <ProjectReference Include="..\..\HR.LeaveManagement.Persistence\HR.LeaveManagement.Persistence.csproj" />
       <ProjectReference Include="..\Infrastructure\HR.LeaveManagement.Infrastructure\HR.LeaveManagement.Infrastructure.csproj" />
     </ItemGroup>
+
+<!--    <PropertyGroup>-->
+<!--        <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>-->
+<!--    </PropertyGroup>-->
+
+<!--    <Target Name="NSwag" AfterTargets="PostBuildEvent" Condition=" '$(Configuration)' == 'Debug' ">-->
+<!--        <Exec WorkingDirectory="$(ProjectDir)" EnvironmentVariables="ASPNETCORE_ENVIRONMENT=Development" Command="$(NSwagExe_Net80) run nswag.json /variables:Configuration=$(Configuration)" /> -->
+<!--    </Target>-->
 
 </Project>
