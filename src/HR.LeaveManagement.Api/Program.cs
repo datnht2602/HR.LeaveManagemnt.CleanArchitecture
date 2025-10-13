@@ -1,5 +1,6 @@
 using HR.LeaveManagement.Api.Middleware;
 using HR.LeaveManagement.Application;
+using HR.LeaveManagement.Identity;
 using HR.LeaveManagement.Infrastructure;
 using HR.LeaveManagement.Persistence;
 using HR.LeaveManagement.Persistence.DatabaseContext;
@@ -11,6 +12,7 @@ var configuration = builder.Configuration;
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(configuration);
 builder.Services.AddPersistenceServices(configuration,typeof(HrDatabaseContext).Assembly);
+builder.Services.AddIdentityServices(configuration);
 
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
@@ -49,6 +51,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("all");
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

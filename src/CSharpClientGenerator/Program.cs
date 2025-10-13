@@ -22,5 +22,5 @@ settings.GenerateClientInterfaces = true;
 
 var generator = new CSharpClientGenerator(document, settings);	
 var fileGenerator = generator.GenerateFile();
-using FileStream fs = new FileStream("../src/HR.LeaveManagement.BlazorUI/Services/Base/ServiceClient.cs", FileMode.Create);
+using FileStream fs = new FileStream("/Users/admin/RiderProjects/HR.LeaveManagment.Clean/src/HR.LeaveManagement.BlazorUI/Services/Base/ServiceClient.cs", FileMode.Create);
 await fs.WriteAsync(System.Text.Encoding.UTF8.GetBytes(fileGenerator));

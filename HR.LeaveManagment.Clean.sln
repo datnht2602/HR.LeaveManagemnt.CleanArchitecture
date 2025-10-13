@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.BlazorUI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpClientGenerator", "src\CSharpClientGenerator\CSharpClientGenerator.csproj", "{77EA8E54-FA9D-4DFC-88D4-55CD269A7F28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Identity", "src\Infrastructure\HR.LeaveManagement.Identity\HR.LeaveManagement.Identity.csproj", "{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -148,6 +150,18 @@ Global
 		{77EA8E54-FA9D-4DFC-88D4-55CD269A7F28}.Release|x64.Build.0 = Release|Any CPU
 		{77EA8E54-FA9D-4DFC-88D4-55CD269A7F28}.Release|x86.ActiveCfg = Release|Any CPU
 		{77EA8E54-FA9D-4DFC-88D4-55CD269A7F28}.Release|x86.Build.0 = Release|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Debug|x64.Build.0 = Debug|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Debug|x86.Build.0 = Debug|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Release|x64.ActiveCfg = Release|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Release|x64.Build.0 = Release|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Release|x86.ActiveCfg = Release|Any CPU
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -166,5 +180,6 @@ Global
 		{E5068E34-395E-4EF4-8279-20E77CBC5AEE} = {1F799B9C-F732-4C14-B011-9A7AB2C8A646}
 		{5A9ED130-E2B3-4667-99CD-8777CA17BBA9} = {749CAE9C-3A41-4179-9CAC-42145F36B0A8}
 		{77EA8E54-FA9D-4DFC-88D4-55CD269A7F28} = {749CAE9C-3A41-4179-9CAC-42145F36B0A8}
+		{89065F6C-8CAC-4475-9977-0F4A0FE9C3A1} = {937C74AB-35E1-43C7-B0A3-BF7F5C4C7688}
 	EndGlobalSection
 EndGlobal
