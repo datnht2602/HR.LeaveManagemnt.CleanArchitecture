@@ -19,7 +19,7 @@ public class ApiAuthenticationStateProvider : AuthenticationStateProvider
     {
         var user = new ClaimsPrincipal(new ClaimsIdentity());
         var isTokenPresent = await _localStorageService.ContainKeyAsync("token");
-        if (isTokenPresent)
+        if (!isTokenPresent)
         {
             return new AuthenticationState(user);
         }

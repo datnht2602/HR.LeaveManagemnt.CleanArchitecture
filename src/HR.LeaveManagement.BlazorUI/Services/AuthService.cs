@@ -10,7 +10,7 @@ public class AuthService : BaseHttpService, IAuthService
 {
     private readonly AuthenticationStateProvider _authenticationStateProvider;
 
-    protected AuthService(IClient client, ILocalStorageService localStorageService, AuthenticationStateProvider authenticationStateProvider) : base(client, localStorageService)
+    public AuthService(IClient client, ILocalStorageService localStorageService, AuthenticationStateProvider authenticationStateProvider) : base(client, localStorageService)
     {
         _authenticationStateProvider = authenticationStateProvider;
     }
@@ -29,7 +29,7 @@ public class AuthService : BaseHttpService, IAuthService
             {
                 return false;
             }
-            await LocalStorageService.SetItemAsync("authToken", result.Token);
+            await LocalStorageService.SetItemAsync("token", result.Token);
             await ((ApiAuthenticationStateProvider) _authenticationStateProvider).LoggedIn();
             return true;
 
