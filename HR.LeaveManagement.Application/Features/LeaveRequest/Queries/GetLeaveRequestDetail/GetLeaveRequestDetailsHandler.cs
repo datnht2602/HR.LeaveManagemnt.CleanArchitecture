@@ -1,4 +1,5 @@
 using AutoMapper;
+using HR.LeaveManagement.Application.Contracts.Identity;
 using HR.LeaveManagement.Application.Contracts.Persistence;
 using HR.LeaveManagement.Application.Exceptions;
 using MediatR;
@@ -9,12 +10,14 @@ public class GetLeaveRequestDetailsHandler : IRequestHandler<GetLeaveRequestDeta
 {
     private readonly ILeaveRequestRepository _leaveRequestRepository;
     private readonly IMapper _mapper;
+    private readonly IUserService _userService;
 
     public GetLeaveRequestDetailsHandler(ILeaveRequestRepository leaveRequestRepository,
-        IMapper mapper)
+        IMapper mapper, IUserService userService)
     {
         _leaveRequestRepository = leaveRequestRepository;
         _mapper = mapper;
+        _userService = userService;
     }
 
     public async Task<LeaveRequestDetailsDto> Handle(GetLeaveRequestDetailQuery request, CancellationToken cancellationToken)
@@ -25,6 +28,7 @@ public class GetLeaveRequestDetailsHandler : IRequestHandler<GetLeaveRequestDeta
             throw new NotFoundException(nameof(LeaveRequest), request.Id);
 
         // Add Employee details as needed
+        leaveRequest.Employee = await _userService.GetEmployeeById(leaveRequest.RequestingEmployeeId);
 
         return leaveRequest;
     }

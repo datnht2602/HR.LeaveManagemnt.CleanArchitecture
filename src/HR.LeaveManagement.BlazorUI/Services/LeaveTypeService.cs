@@ -10,22 +10,20 @@ public class LeaveTypeService : BaseHttpService, ILeaveTypeService
 {
     private readonly IMapper _mapper;
 
-    public LeaveTypeService(IClient client, IMapper mapper, ILocalStorageService localStorageService) : base(client, localStorageService)
+    public LeaveTypeService(IServiceClient serviceClient, IMapper mapper, ILocalStorageService localStorageService) : base(serviceClient, localStorageService)
     {
         _mapper = mapper;
     }
 
     public async Task<List<LeaveTypeVM>> GetLeaveTypes()
     {
-        await AddBearerToken();
-        var leaveTypes = await Client.LeaveTypesAllAsync();
+        var leaveTypes = await ServiceClient.LeaveTypesAllAsync();
         return _mapper.Map<List<LeaveTypeVM>>(leaveTypes);
     }
 
     public async Task<LeaveTypeVM> GetLeaveTypeDetails(int id)
     {
-        await AddBearerToken();
-        var leaveType = await Client.LeaveTypesGETAsync(id);
+        var leaveType = await ServiceClient.LeaveTypesGETAsync(id);
         return _mapper.Map<LeaveTypeVM>(leaveType);
     }
 
@@ -33,9 +31,8 @@ public class LeaveTypeService : BaseHttpService, ILeaveTypeService
     {
         try
         {
-            await AddBearerToken();
             var createLeaveTypeCommand = _mapper.Map<CreateLeaveTypeCommand>(leaveType);
-            await Client.LeaveTypesPOSTAsync(createLeaveTypeCommand);
+            await ServiceClient.LeaveTypesPOSTAsync(createLeaveTypeCommand);
             return new Response<Guid>()
             {
                 Success = true
@@ -51,9 +48,8 @@ public class LeaveTypeService : BaseHttpService, ILeaveTypeService
     {
         try
         {
-            await AddBearerToken();
             var updateLeaveTypeCommand = _mapper.Map<UpdateLeaveTypeCommand>(leaveType);
-            await Client.LeaveTypesPUTAsync(updateLeaveTypeCommand);
+            await ServiceClient.LeaveTypesPUTAsync(updateLeaveTypeCommand);
             return new Response<Guid>()
             {
                 Success = true
@@ -69,8 +65,7 @@ public class LeaveTypeService : BaseHttpService, ILeaveTypeService
     {
         try
         {
-            await AddBearerToken();
-            await Client.LeaveTypesDELETEAsync(id);
+            await ServiceClient.LeaveTypesDELETEAsync(id);
             return new Response<Guid>()
             {
                 Success = true

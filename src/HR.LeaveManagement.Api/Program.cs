@@ -33,6 +33,9 @@ builder.Services.AddSwaggerGen(options =>
         Description = "API for managing employee leave requests"
     });
 });
+
+builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionMiddleware>();

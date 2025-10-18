@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace HR.LeaveManagement.BlazorUI.Models;
+namespace HR.LeaveManagement.BlazorUI.Models.Authentication;
 
 public class LoginVM
 {

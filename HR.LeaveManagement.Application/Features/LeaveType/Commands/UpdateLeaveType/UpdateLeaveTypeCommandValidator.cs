@@ -23,9 +23,9 @@ public class UpdateLeaveTypeCommandValidator : AbstractValidator<UpdateLeaveType
             .LessThan(100).WithMessage("Default days must not be greater than 100")
             .GreaterThan(1).WithMessage("Default days must not be less than 1");
         
-        RuleFor(q => q)
-            .MustAsync(LeaveTypeNameUnique)
-            .WithMessage("Leave type name already exists");
+        // RuleFor(q => q)
+        //     .MustAsync(LeaveTypeNameUnique)
+        //     .WithMessage("Leave type name already exists");
         
     }
 

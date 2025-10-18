@@ -1,5 +1,6 @@
 using HR.LeaveManagement.BlazorUI.Contracts;
 using HR.LeaveManagement.BlazorUI.Models;
+using HR.LeaveManagement.BlazorUI.Models.Authentication;
 using Microsoft.AspNetCore.Components;
 
 namespace HR.LeaveManagement.BlazorUI.Pages;

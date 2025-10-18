@@ -11,6 +11,9 @@ public partial class Index
     
     [Inject] 
     public ILeaveTypeService LeaveTypeService { get; set; }
+    
+    [Inject] 
+    public ILeaveAllocationService LeaveAllocationService { get; set; }
 
     public List<LeaveTypeVM> LeaveTypes { get; set; }
 
@@ -46,7 +49,7 @@ public partial class Index
 
     protected void AllocateLeaveType(int id)
     {
-        
+        LeaveAllocationService.CreateLeaveAllocations(id);
     }
     
     protected override async Task OnInitializedAsync()

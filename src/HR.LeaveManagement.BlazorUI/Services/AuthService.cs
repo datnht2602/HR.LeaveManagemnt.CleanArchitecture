@@ -10,7 +10,7 @@ public class AuthService : BaseHttpService, IAuthService
 {
     private readonly AuthenticationStateProvider _authenticationStateProvider;
 
-    public AuthService(IClient client, ILocalStorageService localStorageService, AuthenticationStateProvider authenticationStateProvider) : base(client, localStorageService)
+    public AuthService(IServiceClient serviceClient, ILocalStorageService localStorageService, AuthenticationStateProvider authenticationStateProvider) : base(serviceClient, localStorageService)
     {
         _authenticationStateProvider = authenticationStateProvider;
     }
@@ -24,7 +24,7 @@ public class AuthService : BaseHttpService, IAuthService
         };
         try
         {
-            var result = await Client.LoginAsync(authRequest);
+            var result = await ServiceClient.LoginAsync(authRequest);
             if (string.IsNullOrEmpty(result.Token))
             {
                 return false;
@@ -55,7 +55,7 @@ public class AuthService : BaseHttpService, IAuthService
             Email = email,
             Password = password
         };
-        var response = await Client.RegisterAsync(registrationRequest);
+        var response = await ServiceClient.RegisterAsync(registrationRequest);
         return !string.IsNullOrEmpty(response.Token);
     }
 }

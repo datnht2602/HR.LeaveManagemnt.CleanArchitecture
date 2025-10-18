@@ -1,0 +1,15 @@
+@inject NavigationManager _navManager
+<h3>BackToList</h3>
+
+<button class="btn btn-outline-dark btn-block" @onclick="NavigateToList">
+    <span class="oi oi-arrow-thick-left"></span> Back to List
+</button>
+
+@code {
+    [Parameter] public string Target { get; set; }
+
+    void NavigateToList()
+    {
+        _navManager.NavigateTo($"{_navManager.BaseUri}{Target}");
+    }
+}

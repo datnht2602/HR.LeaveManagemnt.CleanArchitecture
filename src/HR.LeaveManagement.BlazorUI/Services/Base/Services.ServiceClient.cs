@@ -1,6 +1,6 @@
 namespace HR.LeaveManagement.BlazorUI.Services.Base;
 
-public partial class Client : IClient
+public partial class ServiceClient : IServiceClient
 {
     public HttpClient HttpClient
     {

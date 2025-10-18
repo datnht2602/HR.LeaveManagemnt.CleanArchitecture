@@ -43,7 +43,7 @@ else
                 <td>@leaveType.Name </td>
                 <td>@leaveType.DefaultDays </td>
                 <td>
-                    <AuthorizeView Roles="Administrator">
+                    <AuthorizeView Roles="Admin">
                         <button @onclick=@(() => AllocateLeaveType(leaveType.Id))
                                 class="btn btn-dark">
                             Allocate Leave

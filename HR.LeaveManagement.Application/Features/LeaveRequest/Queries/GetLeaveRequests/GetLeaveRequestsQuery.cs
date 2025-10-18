@@ -5,15 +5,5 @@ namespace HR.LeaveManagement.Application.Features.LeaveRequest.Queries.GetLeaveR
 
 public class GetLeaveRequestsQuery : IRequest<List<LeaveRequestsDto>>
 {
-    public string RequestingEmployeeId { get; set; }
-    
-    public LeaveTypeDto LeaveType { get; set; }
-    
-    public DateTime DateRequested { get; set; }
-    
-    public DateTime StartDate { get; set; }
-    
-    public DateTime EndDate { get; set; }
-    
-    public bool? Approved { get; set; }
+    public bool IsLoggedInUser { get; set; }
 }
