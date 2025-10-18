@@ -1,3 +1,4 @@
+using Blazored.Toast.Services;
 using HR.LeaveManagement.BlazorUI.Contracts;
 using HR.LeaveManagement.BlazorUI.Models.LeaveTypes;
 using Microsoft.AspNetCore.Components;
@@ -10,6 +11,8 @@ public partial class Create : ComponentBase
     NavigationManager _navManager { get; set; }
     [Inject]
     ILeaveTypeService _client { get; set; }
+    [Inject]
+    IToastService toastService { get; set; }
     public string Message { get; private set; }
 
     LeaveTypeVM leaveType = new();
@@ -19,6 +22,7 @@ public partial class Create : ComponentBase
         var response = await _client.CreateLeaveType(leaveType);
         if(response.Success)
         {
+            toastService.ShowSuccess("Leave Type created Successfully");
             _navManager.NavigateTo("/leavetypes/");
         }
         Message = response.Message;

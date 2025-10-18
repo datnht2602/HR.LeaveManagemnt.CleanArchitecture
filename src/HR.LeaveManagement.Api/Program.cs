@@ -4,8 +4,13 @@ using HR.LeaveManagement.Identity;
 using HR.LeaveManagement.Infrastructure;
 using HR.LeaveManagement.Persistence;
 using HR.LeaveManagement.Persistence.DatabaseContext;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context, logConfiguration) => logConfiguration
+    .WriteTo.Console()
+    .ReadFrom.Configuration(context.Configuration));
 
 // Add services to the container.
 var configuration = builder.Configuration;
@@ -50,6 +55,8 @@ if (app.Environment.IsDevelopment())
         options.RoutePrefix = "swagger"; // Access Swagger UI at /swagger
     });
 }
+
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 
